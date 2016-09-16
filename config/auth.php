@@ -18,6 +18,10 @@ return [
         'passwords' => 'users',
     ],
 
+    'auth' => [
+        'jwt' => 'Dingo\Api\Auth\Provider\JWT',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -67,7 +71,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Utente::class,
         ],
 
         // 'users' => [

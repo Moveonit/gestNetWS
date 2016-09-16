@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('testDB', function () {
+    if(DB::connection()->getDatabaseName())
+    {
+        return "Yes! successfully connected to the DB: " . DB::connection()->getDatabaseName();
+    }
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
