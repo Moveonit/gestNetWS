@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Log;
+use Illuminate\Contracts\Support\Jsonable;
 use Tymon\JWTAuth\Middleware\RefreshToken;
 
 
@@ -52,6 +53,11 @@ class JwtAuthenticateController extends Controller
     public function me()
     {
         return JWTAuth::parseToken()->toUser();
+    }
+
+    public function pratiche()
+    {
+        return response()->json(['auth'=>Auth::user(), 'pratiche'=>JWTAuth::parseToken()->toUser()->pratiche]);
     }
 
     public function createRole(Request $request){

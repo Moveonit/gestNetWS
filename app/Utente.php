@@ -33,4 +33,9 @@ class Utente extends Authenticatable
     protected $hidden = [
         "password","Password_utente"
     ];
+
+    public function pratiche()
+    {
+        return $this->hasMany('App\Debitore', "IDFunzionarioCorrente");
+    }
 }

@@ -30,4 +30,6 @@ class Debitore extends Model
 
     protected $hidden = [
     ];*/
+
+
 }

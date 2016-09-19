@@ -28,4 +28,5 @@ class userController extends Controller
             'password' => bcrypt($request['password']),
         ]);
     }
+
 }

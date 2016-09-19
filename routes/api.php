@@ -29,6 +29,8 @@ $api->version('v1', ['middleware' => 'jwt.auth'], function($api){
 
     $api->get('/utente', 'App\Http\Controllers\Auth\JwtAuthenticateController@index');
 
+    $api->get('/pratiche', 'App\Http\Controllers\Auth\JwtAuthenticateController@pratiche');
+
     $api->get('/utente/{id}', 'App\Http\Controllers\Auth\JwtAuthenticateController@show');
 });
 
